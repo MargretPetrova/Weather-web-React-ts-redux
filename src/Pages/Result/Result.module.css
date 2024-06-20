@@ -1,0 +1,19 @@
+.result-container {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url('../../assets//images/rainy.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0;
+  margin: 0;
+ 
+}
+
+/* .padding-container {
+  padding: 1.5rem;
+} */

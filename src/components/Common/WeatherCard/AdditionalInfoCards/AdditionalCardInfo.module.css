@@ -1,0 +1,15 @@
+.add-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  gap: 1rem;
+}
+
+.add-info img {
+  width: 40%;
+}
+
+.add-info span {
+  font-size: smaller;
+}

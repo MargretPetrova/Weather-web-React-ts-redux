@@ -1,0 +1,15 @@
+.weakly-weather-item {
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
+    /* box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px; */
+    border-radius: 1rem;
+    z-index: 1;
+    margin-top: -2rem;
+    padding: 0.5rem;
+    background-color: inherit;
+    flex-direction: column;
+    width: 25%;
+    background-image: linear-gradient(transparent, rgb(224, 224, 224, 0.6));
+}

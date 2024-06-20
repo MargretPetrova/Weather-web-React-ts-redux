@@ -1,0 +1,30 @@
+.search-form {
+  display: flex;
+  width: 60%;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  height: 60%;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.search-div-left {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.search-bar button {
+  background-color: white;
+  border: none;
+  border-radius: 15%;
+  width: 50px;
+}
