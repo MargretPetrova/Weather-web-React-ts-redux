@@ -39,7 +39,7 @@ const SearchBar: React.FC<SearchBarProps> = () => {
     if (city.trim() === "") {
       dispatch(setError({ message: "Please select a valid location" }));
     } else {
-      dispatch(getWeather(city)); //redux
+      dispatch(getWeather(city));
       handleInputChange.cancel();
       navigate("/location");
     }
