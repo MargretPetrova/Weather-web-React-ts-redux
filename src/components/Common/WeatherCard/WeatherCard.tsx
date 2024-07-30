@@ -6,7 +6,7 @@ import {
   getWeatherForecastDays,
   getWeatherLocation,
 } from "../../../states/selectors";
-import List from "../WeeklyDaysItem/WeeklyDaysItem";
+import WeeklyDaysItem from "../WeeklyDaysItem/WeeklyDaysItem";
 import wetIcon from "../../../assets/images/wet.png";
 import windIcon from "../../../assets/images/wind.png";
 import { weatherDateFormater } from "../../../helpers/weatherDate";
@@ -72,7 +72,7 @@ const WeatherCard: FC<WeatherCardProps> = () => {
         <div className={styles["weekly-days"]}>
           {forecastForDays &&
             forecastForDays.map((day) => (
-              <List date={day.date} day={day.day}></List>
+              <WeeklyDaysItem date={day.date} day={day.day}></WeeklyDaysItem>
             ))}
         </div>
       </div>

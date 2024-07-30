@@ -2,15 +2,12 @@ import React, { useCallback, useState } from "react";
 import InputField from "../Common/Input/InputField";
 import Button from "./Button/Button";
 import styles from "./SearchBar.module.css";
-import {
-  getSuggestions,
-  getWeather,
-  setError,
-} from "../../states/actions/weatherActions";
+import { getWeather, setError } from "../../states/actions/weatherActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { debounce } from "lodash";
 import { getWeatherSuggestions } from "../../states/selectors";
+import { getSuggestions } from "../../states/actions/suggestionsActions";
 
 interface SearchBarProps {}
 
@@ -20,11 +17,12 @@ const SearchBar: React.FC<SearchBarProps> = () => {
   const [city, setCity] = useState("");
   const navigate = useNavigate();
 
-  const allSuggestions = useSelector(getWeatherSuggestions); 
+  const allSuggestions = useSelector(getWeatherSuggestions);
+  console.log(allSuggestions)
 
   const handleInputChange = useCallback(
     debounce(async (city: string) => {
-      await dispatch(getSuggestions(city)); 
+      await dispatch(getSuggestions(city));
     }, 1000),
     [dispatch]
   );
@@ -41,12 +39,14 @@ const SearchBar: React.FC<SearchBarProps> = () => {
     } else {
       dispatch(getWeather(city));
       handleInputChange.cancel();
-      navigate("/location");
     }
   };
 
   return (
-    <form onSubmit={onSubmitHandler} className={`form-group ${styles['search-form']}`}>
+    <form
+      onSubmit={onSubmitHandler}
+      className={`form-group ${styles["search-form"]}`}
+    >
       <div className={styles["search-bar"]}>
         <div className={styles["search-div-left"]}>
           <InputField

@@ -16,7 +16,7 @@ export const hasError = createSelector(
 
 export const getWeatherData = createSelector(
   select,
-  (state) => state.weatherReducer.data || {}
+  (state) => state.weatherReducer.data || undefined
 );
 export const getWeatherLocation = createSelector(
   select,
@@ -32,7 +32,7 @@ export const getWeatherForecastDays = createSelector(
 );
 export const getWeatherSuggestions = createSelector(
   select,
-  (state) => state.weatherReducer.data?.suggestions
+  (state) => state.suggestionsReducer.suggestions
 );
 
 // export const getErrorData = createSelector(select, (state)=> state.weatherReducer.error);

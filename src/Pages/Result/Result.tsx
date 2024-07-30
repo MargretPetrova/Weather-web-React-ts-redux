@@ -1,23 +1,19 @@
 import { FC } from "react";
 import WeatherCard from "../../components/Common/WeatherCard/WeatherCard";
-import { useSelector } from "react-redux";
-import { hasError, getLoadingState } from "../../states/selectors";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import styles from "../Result/Result.module.css";
+import { useSelector } from "react-redux";
+import { getWeatherLocation } from "../../states/selectors";
 
 interface ResultProps {}
 
 const Result: FC<ResultProps> = () => {
-  const loading = useSelector(getLoadingState);
-  const isError = useSelector(hasError);
-
+  const location = useSelector(getWeatherLocation);
   return (
     <div className={`${styles["result-container"]}`}>
       <div className={styles["padding-container"]}>
         <div className="row container d-flex justify-content-center ">
-          {loading && <h2>Loading...</h2>}
-          {!loading && !isError && <WeatherCard />}
-          {isError && <h2>error</h2>}
+         {location && <WeatherCard />}
         </div>
       </div>
     </div>

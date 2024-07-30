@@ -1,9 +1,11 @@
 import weatherReducer from './reducers/weatherReducers';
+import suggestionsReducer from './reducers/sugestionsReducers'
 import { configureStore } from '@reduxjs/toolkit';
 
 const store = configureStore({
     reducer: {
-      weatherReducer
+      weatherReducer,
+      suggestionsReducer
     }
    
 });

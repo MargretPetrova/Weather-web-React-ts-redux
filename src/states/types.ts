@@ -1046,6 +1046,11 @@ export interface WeatherState {
   loading: boolean;
   hasError: boolean;
 }
+export interface SuggestionsState {
+  suggestions: WeatherSuggestions,
+  loading: boolean,
+  hasError: boolean,
+}
 
 interface GetWeatherAction {
   type: typeof GET_WEATHER;
@@ -1069,5 +1074,6 @@ interface SetErrorAction {
 export type WeatherAction =
   | SetLoadingAction
   | SetErrorAction
-  | GetWeatherAction
-  | GetSuggestionsAction;
+  | GetWeatherAction;
+
+export type SuggestionsAction = | GetSuggestionsAction;

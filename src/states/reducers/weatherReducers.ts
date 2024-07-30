@@ -21,7 +21,7 @@ const weatherReducer = (
     case GET_WEATHER:
       return {
         ...state,
-        data: { weather: action.payload },
+        data: {weather: action.payload },
         loading: false,
         hasError: false,
       };
@@ -40,8 +40,8 @@ const weatherReducer = (
       };
     case GET_SUGGESTIONS:
       return {
-        ...state,
-        data: { suggestions: action.payload },
+       ...state,
+        // data: {weather:state,  suggestions: action.payload },
         hasError: false,
         loading: false,
       };
