@@ -1,5 +1,7 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useState } from "react";
 import styles from "./InputField.module.css";
+import { ErrorType } from "../../../helpers/helperTypes";
+import FieldValidation from "../FieldValidation/FieldValidationMsg";
 
 interface InputProps {
   value?: string;
@@ -8,25 +10,48 @@ interface InputProps {
   inputClass?: string;
   id?: string;
   list?: string;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+  error?: string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  validators?: [ErrorType];
+  errorMsg?:string
 }
 
-const InputField: React.FC<InputProps> = ({type, value, placeholder, inputClass, onChange, list, id}) => {
-  // const [value, setValue] = React.useState("");
-  // const handleChange = (e: { target: { value: string } }) => {
-  //   setValue(e.target.value);
-  // };
+const InputField: React.FC<InputProps> = ({
+  type,
+  value,
+  placeholder,
+  inputClass,
+  onChange,
+  list,
+  id,
+  error,
+  validators,
+  errorMsg
+}) => {
+  const [validate, setvalidate] = useState<ErrorType>();
+
+  validators &&
+    validators.forEach((element: ErrorType) => {
+      setvalidate(element);
+    });
   return (
-    <input
-      // className={styles[`${inputClass}`]}
-      className={inputClass}
-      type={type}
-      value={value}
-      onChange={onChange}
-      list={list}
-      id={id}
-      placeholder={placeholder}
-    />
+    <div>
+      <input
+        className={inputClass}
+        type={type}
+        value={value}
+        onChange={onChange}
+        list={list}
+        id={id}
+        placeholder={placeholder}
+        required
+      />
+      <FieldValidation
+      classDiv = 'error-msg'
+      message={errorMsg}
+      />
+      {/* <span>{errorMsg}</span> */}
+    </div>
   );
 };
 

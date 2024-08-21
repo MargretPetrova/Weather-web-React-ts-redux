@@ -4,6 +4,7 @@
   justify-content: center;
   padding: 2px;
   gap: 1rem;
+  color:#969696;
 }
 
 .add-info img {
@@ -12,4 +13,7 @@
 
 .add-info span {
   font-size: smaller;
+}
+.text-grey{
+  color: lightgrey;
 }

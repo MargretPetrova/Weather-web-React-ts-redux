@@ -1,5 +1,5 @@
 import { FC } from "react";
-import styles from "../AdditionalInfoCards/AdditionalCardInfo.module.css"
+import styles from "./AdditionalCardInfo.module.css"
 
 interface AdditionalInfoCardsProps {
     inputClass?: string;
@@ -10,7 +10,7 @@ const AdditionalInfoCards: FC<AdditionalInfoCardsProps> = ({inputClass, text, ic
   return (
     <div className={styles["add-info"]}>
       <img src={icon}/>
-    <span>{text}</span>
+    <span className={styles["text-grey"]}>{text}</span>
     </div>
   );
 };

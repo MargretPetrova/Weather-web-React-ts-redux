@@ -1,0 +1,35 @@
+.result-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0;
+  margin: 0;
+}
+
+.forecast-container {
+  width: 100%;
+  background: #1e202b;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-top: -150px;
+  margin-bottom: 50px;
+}
+.forecast-container .forecast {
+  display: table-cell;
+  vertical-align: top;
+}
+
+@media screen and (max-width: 990px) {
+  .forecast-container .forecast {
+    display: block;
+    width: 16.6667%;
+    float: left;
+  }
+}

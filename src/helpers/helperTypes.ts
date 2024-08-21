@@ -9,3 +9,7 @@ export interface DateFormater {
     hour: string;
     date:string;
 }
+export interface ErrorType {
+  valid?: boolean;
+  message?: string;
+} 

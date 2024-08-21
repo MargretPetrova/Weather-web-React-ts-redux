@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.40c62a44.css",
-    "main.js": "/static/js/main.c7b586d3.js",
-    "static/js/453.f5cc9469.chunk.js": "/static/js/453.f5cc9469.chunk.js",
-    "static/media/background.jpg": "/static/media/background.b69bbd24b2b161a19981.jpg",
-    "static/media/rainy.jpg": "/static/media/rainy.0cd38897c32c7eac00bb.jpg",
-    "index.html": "/index.html",
-    "main.40c62a44.css.map": "/static/css/main.40c62a44.css.map",
-    "main.c7b586d3.js.map": "/static/js/main.c7b586d3.js.map",
-    "453.f5cc9469.chunk.js.map": "/static/js/453.f5cc9469.chunk.js.map"
+    "main.css": "/Weather-web-React-ts-redux/static/css/main.fbe24b59.css",
+    "main.js": "/Weather-web-React-ts-redux/static/js/main.ac2f6f8f.js",
+    "static/js/453.f5cc9469.chunk.js": "/Weather-web-React-ts-redux/static/js/453.f5cc9469.chunk.js",
+    "static/media/background.jpg": "/Weather-web-React-ts-redux/static/media/background.b69bbd24b2b161a19981.jpg",
+    "static/media/rainy.jpg": "/Weather-web-React-ts-redux/static/media/rainy.0cd38897c32c7eac00bb.jpg",
+    "index.html": "/Weather-web-React-ts-redux/index.html",
+    "main.fbe24b59.css.map": "/Weather-web-React-ts-redux/static/css/main.fbe24b59.css.map",
+    "main.ac2f6f8f.js.map": "/Weather-web-React-ts-redux/static/js/main.ac2f6f8f.js.map",
+    "453.f5cc9469.chunk.js.map": "/Weather-web-React-ts-redux/static/js/453.f5cc9469.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.40c62a44.css",
-    "static/js/main.c7b586d3.js"
+    "static/css/main.fbe24b59.css",
+    "static/js/main.ac2f6f8f.js"
   ]
 }

@@ -1,13 +1,14 @@
 import React, { useCallback, useState } from "react";
+// import { useFormState } from "react-hook-form";
 import InputField from "../Common/Input/InputField";
-import Button from "./Button/Button";
 import styles from "./SearchBar.module.css";
 import { getWeather, setError } from "../../states/actions/weatherActions";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { debounce } from "lodash";
 import { getWeatherSuggestions } from "../../states/selectors";
 import { getSuggestions } from "../../states/actions/suggestionsActions";
+import Container from "../Common/Container/Container";
+import { createMinValidator } from "../../helpers/Validators/minValidator";
 
 interface SearchBarProps {}
 
@@ -15,10 +16,10 @@ const SearchBar: React.FC<SearchBarProps> = () => {
   const dispatch = useDispatch<any>();
 
   const [city, setCity] = useState("");
-  const navigate = useNavigate();
+  const [isFormDirty, setIsFormDirty] = useState(false);
+
 
   const allSuggestions = useSelector(getWeatherSuggestions);
-  console.log(allSuggestions)
 
   const handleInputChange = useCallback(
     debounce(async (city: string) => {
@@ -28,13 +29,14 @@ const SearchBar: React.FC<SearchBarProps> = () => {
   );
 
   const handleChange = (e: { target: { value: string; type: string } }) => {
+    setIsFormDirty(true)
     setCity(e.target.value);
     handleInputChange(e.target.value);
   };
 
   const onSubmitHandler = (e: any) => {
     e.preventDefault();
-    if (city.trim() === "") {
+    if (city.trim() === "" && city.length < 3) {
       dispatch(setError({ message: "Please select a valid location" }));
     } else {
       dispatch(getWeather(city));
@@ -42,7 +44,10 @@ const SearchBar: React.FC<SearchBarProps> = () => {
     }
   };
 
+  const minValidator = createMinValidator(city, isFormDirty);
+
   return (
+    <Container>
     <form
       onSubmit={onSubmitHandler}
       className={`form-group ${styles["search-form"]}`}
@@ -51,13 +56,13 @@ const SearchBar: React.FC<SearchBarProps> = () => {
         <div className={styles["search-div-left"]}>
           <InputField
             onChange={handleChange}
-            inputClass="input-group-text"
             type="text"
             value={city}
             placeholder="Enter a city..."
-            list="list-suggestions"
+            list="list-suggestions" 
+            errorMsg={!minValidator.valid ? minValidator.message : ''}
           />
-          {allSuggestions && allSuggestions.length && (
+          {allSuggestions && allSuggestions.length > 0 && (
             <datalist
               id="list-suggestions"
               className={styles["data-list"]}
@@ -85,6 +90,8 @@ const SearchBar: React.FC<SearchBarProps> = () => {
         </button>
       </div>
     </form>
+    </Container>
+    
   );
 };
 

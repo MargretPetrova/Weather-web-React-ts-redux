@@ -6,12 +6,12 @@ import {
   getWeatherForecastDays,
   getWeatherLocation,
 } from "../../../states/selectors";
-import WeeklyDaysItem from "../WeeklyDaysItem/WeeklyDaysItem";
+import WeeklyDaysItem from "./components/WeeklyDaysItem/WeeklyDaysItem";
 import wetIcon from "../../../assets/images/wet.png";
 import windIcon from "../../../assets/images/wind.png";
 import { weatherDateFormater } from "../../../helpers/weatherDate";
-import WeeklyCard from "./AdditionalInfoCards/AdditionalInfoCards";
-import AdditionalInfoCards from "./AdditionalInfoCards/AdditionalInfoCards";
+import WeeklyCard from "./components/AdditionalInfoCards/AdditionalInfoCards";
+import AdditionalInfoCards from "./components/AdditionalInfoCards/AdditionalInfoCards";
 
 interface WeatherCardProps {
   //todo
@@ -28,7 +28,8 @@ const WeatherCard: FC<WeatherCardProps> = () => {
     : "";
 
   return (
-    <div className={styles.card}>
+
+    <div className={styles["today forecast"]}>
       <div className={styles["current-card-body"]}>
         <div
           className={styles["current-icon"]}
@@ -38,23 +39,22 @@ const WeatherCard: FC<WeatherCardProps> = () => {
         ></div>
         <div className={styles["current-info"]}>
           <div className={styles["weather-date-location"]}>
-            <p>
+            <p className={styles["text-grey"]}>
               {weekDay}, {currentTime}
             </p>
 
-            <h1 className="weather-date">{location && location.name}</h1>
+            <h1 className={styles["text-grey"]}>{location && location.name}</h1>
           </div>
           <div className="weather-data d-flex">
-            <div className="mr-auto">
-              <h4 className="display-3">
+            <div className={styles["mr-auto text-white"]}>
+              <h4 className={styles["text-white"]}>
                 {current && current.temp_c}
                 <span className="symbol">&deg;</span>C
               </h4>
-              <p>{current && current.condition.text}</p>
+              <p className={styles["text-grey"]}>{current && current.condition.text}</p>
             </div>
           </div>
           <div className={styles["additional-info-bar"]}>
-            {/* todo */}
             <AdditionalInfoCards
               inputClass="humidity"
               text={`${current?.humidity}%`}
