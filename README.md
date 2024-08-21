@@ -1,5 +1,111 @@
-A React TS Redux weather website from scratch. In progress
+<h1 align="center">
+A React TS Redux weather website from scratch.
+</h1>
+<h4 align="center">
+In Progres...
+</h4>
 
+ ## Content
+- [Overview](#overview)
+  - [Used Technologies](#user-technologies)
+  - [Architecture](#architecture)
+- [Getting Started with Create React App](#getting-started-with-create-react-app)
+
+# Overview
+This is a simple React Redux project from scratch.
+
+## Used Technologies
+   - React
+   - TypeScript
+   - Redux
+   - lodash
+   - Storybook
+   - bootstrap
+
+## Architecture
+
+```
+src
+├── App.css
+├── App.test.tsx
+├── App.tsx
+├── assets
+│   └── images
+│       ├── 
+│       ├── 
+│      
+├── components
+│   ├── Common
+│   │   ├── Container
+│   │   │   ├── Container.module.css
+│   │   │   └── Container.tsx
+│   │   ├── FieldValidation
+│   │   │   ├── FieldValidationMsg.module.css
+│   │   │   └── FieldValidationMsg.tsx
+│   │   ├── Input
+│   │   │   ├── InputField.module.css
+│   │   │   ├── InputField.stories.ts
+│   │   │   └── InputField.tsx
+│   │   └── WeatherCard
+│   │       ├── components
+│   │       │   ├── AdditionalInfoCards
+│   │       │   │   ├── AdditionalCardInfo.module.css
+│   │       │   │   └── AdditionalInfoCards.tsx
+│   │       │   └── WeeklyDaysItem
+│   │       │       ├── WeeklyDaysItem.module.css
+│   │       │       └── WeeklyDaysItem.tsx
+│   │       ├── WeatherCard.module.css
+│   │       └── WeatherCard.tsx
+│   ├── Header
+│   │   ├── components
+│   │   │   └── NavList
+│   │   │       ├── NavList.module.css
+│   │   │       └── NavList.tsx
+│   │   ├── Header.module.css
+│   │   └── Header.tsx
+│   └── SearchBar
+│       ├── Button
+│       │   ├── Button.module.css
+│       │   └── Button.tsx
+│       ├── SearchBar.module.css
+│       ├── SearchBar.stories.tsx
+│       └── SearchBar.tsx
+├── helpers
+│   ├── helperTypes.ts
+│   ├── Validators
+│   │   ├── maxValidator.tsx
+│   │   └── minValidator.tsx
+│   └── weatherDate.ts
+├── index.css
+├── index.tsx
+├── Pages
+│   └── Main
+│       ├── components
+│       │   ├── HeroComponent
+│       │   │   ├── HeroComponent.module.css
+│       │   │   └── HeroComponent.tsx
+│       │   └── Result
+│       │       ├── Result.module.css
+│       │       └── Result.tsx
+│       ├── Main.module.css
+│       ├── Main.stories.tsx
+│       ├── Main.test.tsx
+│       └── Main.tsx
+├── react-app-env.d.ts
+├── reportWebVitals.ts
+├── setupTests.ts
+└── states
+    ├── actions
+    │   ├── suggestionsActions.ts
+    │   └── weatherActions.ts
+    ├── api.ts
+    ├── index.ts
+    ├── reducers
+    │   ├── sugestionsReducers.ts
+    │   └── weatherReducers.ts
+    ├── selectors.ts
+    └── types.ts
+```
 
 # Getting Started with Create React App
 
