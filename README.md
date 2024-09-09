@@ -2,7 +2,7 @@
 A React TS Redux weather website from scratch.
 </h1>
 <h4 align="center">
-In Progres...
+In Progress...
 </h4>
 
  ## Content
