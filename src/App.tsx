@@ -5,6 +5,7 @@ import Main from "./Pages/Main/Main";
 import Result from "./Pages/Main/components/Result/Result";
 import { useSelector } from "react-redux";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Main />} />
           {/* <Route path="location" element={<Result/>} /> */}
         </Routes>
+        <Footer/>
       </div>
     </BrowserRouter>
   );

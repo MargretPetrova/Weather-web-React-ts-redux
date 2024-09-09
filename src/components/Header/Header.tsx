@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 import styles from "./Header.module.css";
 import Container from "../Common/Container/Container";
 import NavList from "./components/NavList/NavList";
+import { NAV_LABELS } from "./labels";
 
 interface HeaderProps {}
 
@@ -10,16 +11,18 @@ const Header: FC<HeaderProps> = () => {
   const onToggleHandler = (e: any) => {
     setMobileNav(!mobileNav);
   };
-  
+  const { GET_THE_WEATHER, NAME, NEWS, LIVE_CAMERAS, PHOTOS, CONTACTS } =
+    NAV_LABELS;
+
   return (
     <div className={styles["site-header"]}>
       <Container>
         <a href="/" className={styles["branding"]}>
           <img src="images/logo.png" alt="" className={styles["logo"]} />
           <div className={styles["logo-type"]}>
-            <h1 className={styles["site-title"]}>Get the weather</h1>
+            <h1 className={styles["site-title"]}>{GET_THE_WEATHER}</h1>
             <small className={styles["site-description"]}>
-              Margret Petrova
+              {NAME}
             </small>
           </div>
         </a>
@@ -84,13 +87,13 @@ const Header: FC<HeaderProps> = () => {
               ></path>
             </svg>
           </button>
-          <NavList classDiv="menu" />
+          <NavList classDiv="menu" labels={[NEWS, LIVE_CAMERAS, PHOTOS, CONTACTS ]} />
         </div>
-        </Container>
-        <Container>
+      </Container>
+      <Container>
         {mobileNav && (
           <div className={styles["mobile-navigation"]}>
-            <NavList classDiv="menu-m" />
+            <NavList classDiv="menu-m" labels={[NEWS, LIVE_CAMERAS, PHOTOS, CONTACTS ]}  />
           </div>
         )}
       </Container>
